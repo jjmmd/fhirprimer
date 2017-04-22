@@ -1,0 +1,35 @@
+<template name="introduction">
+	<div class="container">
+{{#markdown}}
+
+# Introduction to FHIR
+
+## What is FHIR?
+
+FHIR stands for __F__ast __H__ealthcare __I__nteroperability __R__esources. FHIR was created/designed by X, Y, and Z, who wished to make the transfer of healthcare information easier by leveraging existing web design philophies and technologies.
+
+## Background
+
+__H__ealth __L__evel 7 (or HL7) is an international standards body which develops and supports healthcare data messaging and formatting standards. HL7 vesion 2 has been widely adopted around the world and is used in most every clinical system or Electronic Health Record (EHR) to transmit information from one system or device to another.
+
+HL7 version 2 messages were developed in the early 1990s. The structure of the message contains fields and codes which are numbered sequentially and use various characters to 
+
+Example Interation:
+
+A physician orders a chest x-ray on his patient using computerized provider order entry (CPOE). The CPOE system generates an HL7 message that is sent to the Radiology Information System (RIS). The RIS then generates an accession number for the study and allows the patient to be scheduled for his examination. After the chest x-ray is performed, a new HL7 message is created and sent back to the EHR updating the status of the Chest X-ray study to completed. A radioogist looks at the x-ray, dictates a report, and when completed yet another HL7 message is dispatched with the report contents to the EHR system where the ordering physician can then look at the results.
+
+This is a bit of a simplified example, but useful for illustration purposes. HL7v2 messages are generated for nearly every event or interaction in a hospital that uses an electronic system. One of the most common messages is called ADT (for __A__dmission, __D__ischarge, or __T__ransfer) which is issued for a patient when they are admitted or discharge from the hospital, or if they are transferred from one hospital unit to another. An example HL7v2 ADT message is below.
+
+Breakdown of HL7 message
+
+## Why is FHIR an improvement?
+
+FHIR adopts the best features of HL7 version 2, HL7 version 3, and HL7 __C__ommon __D__ocument __A__rchitecture (CDA) and combines them with standard web technologies to create a messaging and information exchange 
+
+## Current Status
+
+FHIR as a standard has been evolving over time and has progressed through several phases of development. Originally proposed and implemented, FHIR became a __D__raft __S__tandard for __T__rial __U__se (DSTU) and has gone through three iterations. You will see the acronym DSTUx, where x is the version number, signifying the version implemented on a particular server. As of April 2017, the most common FHIR in use is DSTU2, however the third version DSTU3 has just been released and should be gaining traction in the coming months. 
+
+{{/markdown}}
+	</div>
+</template>
