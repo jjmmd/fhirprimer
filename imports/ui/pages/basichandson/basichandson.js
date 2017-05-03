@@ -4,7 +4,7 @@ import "./basichandson.html"
 
 Template.basichandson.onCreated(function () {
 	let defaultFHIR = {
-		base : "http://spark.furore.com/fhir/",
+		base : "http://api.hackathon.siim.org/fhir/",
 		resource : "Condition",
 		queryParams : {
 			name : ""
@@ -28,8 +28,7 @@ Template.basichandson.events({
 	"click #sendFHIR" : function (event) {
 		event.preventDefault()
 
-		let url = "http://spark.furore.com/fhir/Condition"
-		Meteor.call('FHIRrequest', url, function(error, response) {
+		Meteor.call('FHIRrequest', $('#FHIRurl').val(), function(error, response) {
 			$('#FHIRresponse').html(JSON.stringify(response, undefined, 2))
 		})
 	}

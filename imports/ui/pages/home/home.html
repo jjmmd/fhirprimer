@@ -1,3 +1,41 @@
 <template name="home">
+	<div class="container">
+		<div class="col-md-9">
+{{#markdown}}
 
+# ** This website is currently under construction. Check back soon for more updates. Version 1.0 should be ready by end of June 2017 **
+
+# What is FHIR?
+
+Fast Healthcare Interoperability Resources (FHIR) is a next generation data and messaging standard created by Health Level 7 (HL7). FHIR combines some of the best features of current medical information and messaging standards such as HL7 version 2, HL7 version 3 RIM, and CDA with a Representational State Transfer (REST) architecture to simplify the structure and trasmission of medical data. In other words, FHIR uses the best of established web architecture and protocols to lower the barriers for use and exchange of medical data.
+
+# What problems does it address?
+
+Healthcare and medicine represent a unique ecosystem of information with problems of standardization and regulation unlike most other industries. At the most basic, a single piece of information (i.e. blood pressure) can be recorded in myriad ways, making the exchange and interpretation of data difficult without creating a map of matching data points between systems. To solve this the FHIR specification defines standardization of data representation for messages between medical systems. Furthermore, through use of RESTful architecture, FHIR simplifies the acquisition of data through web based query and response.
+
+{{/markdown}}
+		</div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="text-center">
+					{{> shareit socialMedia}}
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h4>Links</h4>
+				<ul>
+					<li><a href="http://hl7.org/fhir">HL7 FHIR</a></li>
+					<li><a href="http://smarthealthit.org">SMART on FHIR</a></li>
+					<li><a href="http://https://healthservices.atlassian.net/wiki/">Health Sevices Platform Consortium</a></li>
+				</ul>
+			</div>
+			<hr>
+			<div class="row">
+<!--			<a href="https://twitter.com/intent/tweet?button_hashtag=LearnFHIR" class="twitter-hashtag-button" data-show-count="false">Tweet #LoveTwitter</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+				<h4>Tweets about #FHIR</h4>
+				{{> tweetlist}}
+			</div>
+		</div>
+	</div>
 </template>
