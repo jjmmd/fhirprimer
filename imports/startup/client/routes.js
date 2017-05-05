@@ -9,9 +9,13 @@ import '../../ui/pages/home/home.js'
 import '../../ui/pages/not-found/not-found.js'
 import '../../ui/pages/introduction/introduction.js'
 import '../../ui/pages/prequiz/prequiz.js'
-import '../../ui/pages/basichandson/basichandson.js'
-import '../../ui/pages/basiclesson1/basiclesson1.js'
-import '../../ui/pages/basiclesson2/basiclesson2.js'
+import '../../ui/pages/basic/handson/basichandson.js'
+import '../../ui/pages/basic/lesson1/basiclesson1.js'
+import '../../ui/pages/basic/lesson2/basiclesson2.js'
+import '../../ui/pages/advanced/handson/advancedhandson.js'
+import '../../ui/pages/advanced/lesson1/advancedlesson1.js'
+import '../../ui/pages/advanced/lesson2/advancedlesson2.js'
+import '../../ui/pages/references/references.js'
 
 // Components
 import '../../ui/components/navbar/navbar.js'
@@ -48,16 +52,6 @@ FlowRouter.route('/introduction', {
   }
 })
 
-FlowRouter.route('/basichandson', {
-  name : 'basichandson',
-  action() {
-    BlazeLayout.render('master', {
-      nav : 'navbar',
-      main : 'basichandson'
-    })
-  }
-})
-
 FlowRouter.route('/basiclesson1', {
   name : 'basiclesson1',
   action() {
@@ -74,6 +68,56 @@ FlowRouter.route('/basiclesson2', {
     BlazeLayout.render('master', {
       nav : 'navbar',
       main : 'basiclesson2'
+    })
+  }
+})
+
+FlowRouter.route('/basichandson', {
+  name : 'basichandson',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'basichandson'
+    })
+  }
+})
+
+FlowRouter.route('/advancedlesson1', {
+  name : 'advancedlesson1',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'advancedlesson1'
+    })
+  }
+})
+
+FlowRouter.route('/advancedlesson2', {
+  name : 'advancedlesson2',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'advancedlesson2'
+    })
+  }
+})
+
+FlowRouter.route('/advancedhandson', {
+  name : 'advancedhandson',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'advancedhandson'
+    })
+  }
+})
+
+FlowRouter.route('/references', {
+  name : 'references',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'references'
     })
   }
 })

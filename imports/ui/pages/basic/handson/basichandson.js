@@ -5,12 +5,12 @@ import "./basichandson.html"
 Template.basichandson.onCreated(function () {
 	let defaultFHIR = {
 		base : "http://api.hackathon.siim.org/fhir/",
-		resource : "Condition",
+		resource : "AllergyIntolerance",
 		queryParams : {
 			name : ""
 		}
 	}
-
+	$('')
 	Session.set('FHIRurl', defaultFHIR)
 })
 
@@ -31,5 +31,10 @@ Template.basichandson.events({
 		Meteor.call('FHIRrequest', $('#FHIRurl').val(), function(error, response) {
 			$('#FHIRresponse').html(JSON.stringify(response, undefined, 2))
 		})
+	},
+	"click .resourceSel" : function (event) {
+		let FhirRequest = Session.get('FHIRurl')
+		FhirRequest.resource = event.currentTarget.defaultValue
+		Session.set('FHIRurl', FhirRequest)
 	}
 })
