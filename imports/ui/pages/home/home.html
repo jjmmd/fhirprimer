@@ -3,15 +3,32 @@
 		<div class="col-md-9">
 {{#markdown}}
 
-# **This website is currently under construction. Check back soon for more updates. Version 1.0 should be ready by end of June 2017**
+# Welcome to FHIR Primer
+
+This website is dedicated to teaching you about Fast Healthcare Interoperability Resources (FHIR) from a basic description of what FHIR is to building your first FHIR web application. Use the menubar and tabs above to navigate through the basic and advanced lessons. Hopefully you will find the website useful and informative. Feedback is always appreciated.
+
+# Where to begin?
+
+Imagine you work in a hospital Emergency Room and a new patient arrives with a broken arm. The patient will be entered into the electronic health record, checked into an examination room, seen by a nurse and physician, sent to radiology for an x-ray, have the bone put in a cast by an orthopedist, scheduled for a follow-up clinic appointment, and finally discharged home with a prescription for pain medication. At each step in this process information is created and exchanged between physicians, nurses, clinics, and hospital departments.
+
 
 # What is FHIR?
 
 Fast Healthcare Interoperability Resources (FHIR) is a next generation data and messaging standard created by Health Level 7 (HL7). FHIR combines some of the best features of current medical information and messaging standards such as HL7 version 2, HL7 version 3 RIM, and CDA with a Representational State Transfer (REST) architecture to simplify the structure and trasmission of medical data. In other words, FHIR uses the best of established web architecture and protocols to lower the barriers for use and exchange of medical data.
 
+<div class="text-center">
+	<img src="FHIRcommunication/Slide1.jpg" height="300px" align="center"/>
+</div>
+
+The FHIR specification defines the structure of how data is represented and transmitted between clinical systems. FHIR resources can be used by systems both internal and external to a healthcare institution. For example, within an institution Radiology Information Systems (RIS) or Laboratory Information Systems (LIS) can use FHIR to communicate with the Electronic Health Record (EHR). Similarly, separate healthcare institutions could communicate with one another using FHIR resources.
+
 # What problems does it address?
 
 Healthcare and medicine represent a unique ecosystem of information with problems of standardization and regulation unlike most other industries. At the most basic, a single piece of information (i.e. blood pressure) can be recorded in myriad ways, making the exchange and interpretation of data difficult without creating a map of matching data points between systems. To solve this the FHIR specification defines standardization of data representation for messages between medical systems. Furthermore, through use of RESTful architecture, FHIR simplifies the acquisition of data through web based query and response.
+
+# How to use this website?
+
+This website is intended to give users a basic understanding of what FHIR is and how it works. With that foundation, users will then be able to experiment with building a FHIR query and a basic web based FHIR application, "Hello Patient!". Advanced lessons will dive deeper into web application development with FHIR, including SMART on FHIR security with OAuth2, and leave users with a boilerplate template to begin experimenting on their own.
 
 {{/markdown}}
 		</div>
@@ -25,9 +42,9 @@ Healthcare and medicine represent a unique ecosystem of information with problem
 			<div class="row">
 				<h4>Links</h4>
 				<ul>
-					<li><a href="http://hl7.org/fhir">HL7 FHIR</a></li>
-					<li><a href="http://smarthealthit.org">SMART on FHIR</a></li>
-					<li><a href="http://https://healthservices.atlassian.net/wiki/">Health Sevices Platform Consortium</a></li>
+					<li><a href="http://hl7.org/fhir" target="_blank">HL7 FHIR</a></li>
+					<li><a href="http://smarthealthit.org" target="_blank">SMART on FHIR</a></li>
+					<li><a href="https://healthservices.atlassian.net/wiki/" target="_blank">Health Sevices Platform Consortium</a></li>
 				</ul>
 			</div>
 			<hr>
