@@ -12,6 +12,7 @@ import '../../ui/pages/prequiz/prequiz.js'
 import '../../ui/pages/basic/handson/basichandson.js'
 import '../../ui/pages/basic/lesson1/basiclesson1.js'
 import '../../ui/pages/basic/lesson2/basiclesson2.js'
+import '../../ui/pages/helloPatient/helloPatient.js'
 import '../../ui/pages/advanced/handson/advancedhandson.js'
 import '../../ui/pages/advanced/lesson1/advancedlesson1.js'
 import '../../ui/pages/advanced/lesson2/advancedlesson2.js'
@@ -78,6 +79,16 @@ FlowRouter.route('/basichandson', {
     BlazeLayout.render('master', {
       nav : 'navbar',
       main : 'basichandson'
+    })
+  }
+})
+
+FlowRouter.route('/helloPatient', {
+  name : 'helloPatient',
+  action() {
+    BlazeLayout.render('master', {
+      nav : 'navbar',
+      main : 'helloPatient'
     })
   }
 })
