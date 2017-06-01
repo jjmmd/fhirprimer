@@ -36,5 +36,10 @@ Template.basichandson.events({
 		let FhirRequest = Session.get('FHIRurl')
 		FhirRequest.resource = event.currentTarget.defaultValue
 		Session.set('FHIRurl', FhirRequest)
+	},
+	"click .serverSel" : function (event) {
+		let FhirRequest = Session.get('FHIRurl')
+		FhirRequest.base = event.currentTarget.defaultValue
+		Session.set('FHIRurl', FhirRequest)
 	}
 })
