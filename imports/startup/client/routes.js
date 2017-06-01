@@ -3,6 +3,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout'
 
 // Layouts
 import '../../ui/layouts/body/body.js'
+// import '../../ui/layouts/HPtutorial/HPtutorial.js'
 
 // Pages
 import '../../ui/pages/home/home.js'

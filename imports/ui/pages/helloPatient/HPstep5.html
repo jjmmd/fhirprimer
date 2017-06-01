@@ -1,0 +1,41 @@
+<template name="HPstep5">
+	<div>
+{{#markdown}}
+Every FHIR resource should contain a human readable representation of the data contained within it. In the final step of this tutorial we will display the text component for a patient selected from our patient list. This step will consist of three pieces:
+1. Create an HTML element to contain the patient data.
+2. Add a function within the script to display the patient information dynamically
+3. Recognize when a patient has been selected from the patient list and update the patient data display
+
+For the first step we will add a new set of HTML elements to contain our patient data. Below the patient list section in the <body> element of our webpage add the following HTML:
+
+```html
+<hr>
+
+<h3>Patient Information</h3>
+<p id="patientInfo"></p>
+```
+Next, lets use the script to fill the new HTML in with a selected patient's information. Just like the patientListDisplay() function created earlier we will make a new function dedicated to updating the patient information on the web page. Add the following patientDataDisplay function below the patientListDisplay() function:
+
+```javascript
+function patientDataDisplay(selectedPatient) {
+	let patientInfo = patientList.entry[selectedPatient].resource.text.div
+	$('#patientInfo').html(patientInfo)
+}
+```
+
+Finally, we have to tell the script what to do when a patient link has been selected from the patient list. Add the following code beneath the for-loop within the patientListDisplay() function:
+
+```
+$('.patientLink').on('click', function(selectedPatient) {
+	patientDataDisplay(selectedPatient.currentTarget.id)
+})
+```
+
+Save the file and refresh your browser. You should now have the ability to both load the patient list from the FHIR server and to display information about each SIIM patient.
+
+<img src="./img/helloPatient/Finish.png" height="450px"/>
+
+Congratulations on finishing your first FHIR based web application. I hope this tutorial has been interesting and informative. The HelloPatient code in its entirety is shown below.
+{{/markdown}}
+	</div>
+</template>
