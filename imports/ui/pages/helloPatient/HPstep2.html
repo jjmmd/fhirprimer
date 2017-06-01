@@ -7,7 +7,7 @@ Now that we have a basic web page up and running, lets turn our attention toward
 
 To access information from a remote server from our webpage we will use something called Cross-Origin Resource Sharing (CORS). Many web pages use CORS to load images, scripts, and other information from sites or domains which are different from the original web page. For example, if I do a search on Google.com for images of 'cat', the first few sample images that are displayed are loaded from 'http://www.pexels.com'. 
 
-For security purposes most web browsers and servers do not allow CORS requests to be run from within scripts. However, to keep this tutorial simple we use a function called XMLHttpRequest() and a FHIR server with Access-Control settings that allow us do use CORS.
+For security purposes most web browsers and servers do not allow CORS requests to be run from within scripts. However, to keep this tutorial simple we use a function called XMLHttpRequest() and a FHIR server with permissive Access-Control settings.
 
 Add the following code below the body of your webpage:
 

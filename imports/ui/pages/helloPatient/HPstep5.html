@@ -1,12 +1,16 @@
 <template name="HPstep5">
 	<div>
+		<h2 class="text-center">Step 5: Viewing Patient Data</h2>
+		<hr>
 {{#markdown}}
 Every FHIR resource should contain a human readable representation of the data contained within it. In the final step of this tutorial we will display the text component for a patient selected from our patient list. This step will consist of three pieces:
-1. Create an HTML element to contain the patient data.
-2. Add a function within the script to display the patient information dynamically
-3. Recognize when a patient has been selected from the patient list and update the patient data display
+<ol>
+	<li>Create an HTML element to contain the patient data.</li>
+	<li>Add a function within the script to display the patient information dynamically</li>
+	<li>Recognize when a patient has been selected from the patient list and update the patient data display</li>
+</ol>
 
-For the first step we will add a new set of HTML elements to contain our patient data. Below the patient list section in the <body> element of our webpage add the following HTML:
+For the first piece we will add a new set of HTML elements to contain our patient data. Below the patient list section in the `<body>` element of our webpage add the following HTML:
 
 ```html
 <hr>
@@ -14,7 +18,7 @@ For the first step we will add a new set of HTML elements to contain our patient
 <h3>Patient Information</h3>
 <p id="patientInfo"></p>
 ```
-Next, lets use the script to fill the new HTML in with a selected patient's information. Just like the patientListDisplay() function created earlier we will make a new function dedicated to updating the patient information on the web page. Add the following patientDataDisplay function below the patientListDisplay() function:
+Next, lets add the necessary script code to fill the new HTML element in with a selected patient's information. Just like the patientListDisplay() function created earlier, we will make a new function dedicated to updating the patient information on the web page. Add the following `patientDataDisplay()` function below the `patientListDisplay()` function:
 
 ```javascript
 function patientDataDisplay(selectedPatient) {
@@ -23,7 +27,7 @@ function patientDataDisplay(selectedPatient) {
 }
 ```
 
-Finally, we have to tell the script what to do when a patient link has been selected from the patient list. Add the following code beneath the for-loop within the patientListDisplay() function:
+Finally, we have to tell the script what to do when a patient link has been selected from the patient list. Add the following code beneath the for-loop within the `patientListDisplay()` function:
 
 ```
 $('.patientLink').on('click', function(selectedPatient) {
@@ -35,7 +39,18 @@ Save the file and refresh your browser. You should now have the ability to both 
 
 <img src="./img/helloPatient/Finish.png" height="450px"/>
 
-Congratulations on finishing your first FHIR based web application. I hope this tutorial has been interesting and informative. The HelloPatient code in its entirety is shown below.
+<br>
+
+<h4 class="text-center"><b>Congratulations on finishing your first FHIR based web application!</b></h4>
+<p class="text-center">I hope this tutorial has been interesting and informative and inspires you to delve into FHIR and web application programming further.</p>
+<br>
+<div class="text-center">
+	<h4>Please fill out the Tutorial Completion survey via the link below:</h4>
+	<h3><a href="https://goo.gl/forms/y6eINpXNs2CaIqHJ3" target="_blank">Complete Post-Tutorial Survey</a></h3>
+</div>
+<br>
+<br>
+
 {{/markdown}}
 	</div>
 </template>
