@@ -46,7 +46,7 @@ The HelloPatient.html file in its entirety:
 	FHIRquery.open('GET', "https://api.hackathon.siim.org/fhir/Patient?name=SIIM", true)
 
 	FHIRquery.onload = function() {
-	    console.log(FHIRquery.responseText)
+	    console.log(JSON.parse(FHIRquery.responseText))
 	    patientList = JSON.parse(FHIRquery.response)
 	    patientListDisplay()
 	}
