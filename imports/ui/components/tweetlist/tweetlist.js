@@ -11,7 +11,7 @@ Template.tweetlist.onCreated(function () {
 
 Template.tweetlist.helpers({
 	tweets : function () {
-		console.log(Tweets.find({}).fetch())
+		//console.log(Tweets.find({}).fetch())
 		return Tweets.find({}).fetch()
 	}
 })

@@ -29,5 +29,17 @@ Then save and refresh to examine the changes. Instead of the FHIR response data 
 
 Now we are getting somewhere. We have successfully queried a FHIR server and returned that information to the webpage. At this point though it doesn't look like much. If you read through the JSON object that is returned you will notice an element called "resourceType" with a value of "Bundle". Bundle is exactly what is sounds like - a bundle of information. In this case it is a bundle of patients. The Patient JSON also includes an element array called "entry", and this is where each of the bundle entries is located. If you navigate the JSON object in the JavaScript console you can drill down further and eventually find the patient information that we are looking for.
 {{/markdown}}
+		<div class="row" style="padding:10px 0px 10px 0px">
+			<div class="col-md-6">
+				<div class="text-center">
+					<a href="#"><button id="bck" class="btn btn-lg btn-primary">Back</button></a>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="text-center">
+					<a href="#"><button id="fwd" class="btn btn-lg btn-primary">Forward</button></a>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>

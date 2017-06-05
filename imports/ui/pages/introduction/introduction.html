@@ -2,6 +2,20 @@
 	<div class="container">
 {{#markdown}}
 
+# What is FHIR?
+
+Fast Healthcare Interoperability Resources (FHIR) is a next generation data and messaging standard created by Health Level 7 (HL7). FHIR combines some of the best features of current medical information and messaging standards such as HL7 version 2, HL7 version 3 RIM, and CDA with a Representational State Transfer (REST) architecture to simplify the structure and trasmission of medical data. In other words, FHIR uses the best of established web architecture and protocols to lower the barriers for use and exchange of medical data.
+
+<div class="text-center">
+  <img src="FHIRcommunication/Slide1.jpg" height="300px" align="center"/>
+</div>
+
+The FHIR specification defines the structure of how data is represented and transmitted between clinical systems. FHIR resources can be used by systems both internal and external to a healthcare institution. For example, within an institution Radiology Information Systems (RIS) or Laboratory Information Systems (LIS) can use FHIR to communicate with the Electronic Health Record (EHR). Similarly, separate healthcare institutions could communicate with one another using FHIR resources.
+
+# What problems does it address?
+
+Healthcare and medicine represent a unique ecosystem of information with problems of standardization and regulation unlike most other industries. At the most basic, a single piece of information (i.e. blood pressure) can be recorded in myriad ways, making the exchange and interpretation of data difficult without creating a map of matching data points between systems. To solve this the FHIR specification defines standardization of data representation for messages between medical systems. Furthermore, through use of RESTful architecture, FHIR simplifies the acquisition of data through web based query and response.
+
 # Introduction to FHIR
 
 FHIR stands for __F__ast __H__ealthcare __I__nteroperability __R__esources. FHIR was created/designed from the ground up to make the transfer of healthcare information easier by leveraging existing web design philophies and technologies.

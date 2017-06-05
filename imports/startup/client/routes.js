@@ -89,7 +89,8 @@ FlowRouter.route('/helloPatient', {
   action() {
     BlazeLayout.render('master', {
       nav : 'navbar',
-      main : 'helloPatient'
+      main : 'helloPatient',
+      footer : 'footer'
     })
   }
 })

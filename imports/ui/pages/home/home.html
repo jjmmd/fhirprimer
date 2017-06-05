@@ -1,39 +1,48 @@
 <template name="home">
 	<div class="container">
 		<div class="col-md-9">
-{{#markdown}}
 
-# Welcome to Learn FHIR
+<h1 class="text-center">Welcome to Learn FHIR</h1>
 
-This website is dedicated to teaching you about Fast Healthcare Interoperability Resources (FHIR) from a basic description of what FHIR is to building your first FHIR web application. Use the menubar and tabs above to navigate through the basic and advanced lessons. Hopefully you will find the website useful and informative. Feedback is always appreciated.
-
+<p>This website is dedicated to teaching you about Fast Healthcare Interoperability Resources (FHIR) from a basic description of what FHIR is to building your first FHIR web application. Use the menubar and tabs above to navigate through the basic and advanced lessons. Hopefully you will find the website useful and informative. Feedback is always appreciated.</p>
 <!-- # Where to begin?
 
 Imagine you work in a hospital Emergency Room and a new patient arrives with a broken arm. The patient will be entered into the electronic health record, checked into an examination room, seen by a nurse and physician, sent to radiology for an x-ray, have the bone put in a cast by an orthopedist, scheduled for a follow-up clinic appointment, and finally discharged home with a prescription for pain medication. At each step in this process information is created and exchanged between physicians, nurses, clinics, and hospital departments. -->
 
-<h2 class="text-center">Special Welcome to SIIM 2017 Attendees</h2>
+<hr>
+<h2 class="text-center">Special Thank You to SIIM 2017 Attendees!</h2>
 <div class="text-center"><img src="siim2017_banner.jpg" width="80%"></div>
 <br><br>
+<h3 class="text-center">See the results of the Pre and Post FHIR Intro session surveys <a>here</a>.</h3>
+<br>
+<hr>
 
-# What is FHIR?
-
-Fast Healthcare Interoperability Resources (FHIR) is a next generation data and messaging standard created by Health Level 7 (HL7). FHIR combines some of the best features of current medical information and messaging standards such as HL7 version 2, HL7 version 3 RIM, and CDA with a Representational State Transfer (REST) architecture to simplify the structure and trasmission of medical data. In other words, FHIR uses the best of established web architecture and protocols to lower the barriers for use and exchange of medical data.
-
-<div class="text-center">
-	<img src="FHIRcommunication/Slide1.jpg" height="300px" align="center"/>
+<div class="row">
+	<div class="col-md-6">
+		<h2>What's New:</h2>
+		<ul>
+			<li><a href="/helloPatient">Hello Patient Tutorial</a></li>
+			<li><a href="http://github.com/learnfhir" target="_blank">New Public GitHub Repository</a></li>
+			<li>Twitter account - contact us @learnFHIR</li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+	<h2>Coming Soon:</h2>
+	<ul>
+		<li>LearnFHIR.com dedicated FHIR server - A place for FHIR beginners to experiment with FHIR requests and other functions</li>
+		<li>Advanced Tutorial - Creating a Client/Server FHIR application using Meteor</li>
+	</ul>
+	</div>
 </div>
+<hr>
 
-The FHIR specification defines the structure of how data is represented and transmitted between clinical systems. FHIR resources can be used by systems both internal and external to a healthcare institution. For example, within an institution Radiology Information Systems (RIS) or Laboratory Information Systems (LIS) can use FHIR to communicate with the Electronic Health Record (EHR). Similarly, separate healthcare institutions could communicate with one another using FHIR resources.
-
-# What problems does it address?
-
-Healthcare and medicine represent a unique ecosystem of information with problems of standardization and regulation unlike most other industries. At the most basic, a single piece of information (i.e. blood pressure) can be recorded in myriad ways, making the exchange and interpretation of data difficult without creating a map of matching data points between systems. To solve this the FHIR specification defines standardization of data representation for messages between medical systems. Furthermore, through use of RESTful architecture, FHIR simplifies the acquisition of data through web based query and response.
-
+{{#markdown}}
 # How to use this website?
 
 This website is intended to give users a basic understanding of what FHIR is and how it works. With that foundation, users will then be able to experiment with building a FHIR query and a basic web based FHIR application, "Hello Patient!". Advanced lessons will dive deeper into web application development with FHIR, including SMART on FHIR security with OAuth2, and leave users with a boilerplate template to begin experimenting on their own.
 
 {{/markdown}}
+
 		</div>
 		<div class="col-md-3">
 			<div class="row">

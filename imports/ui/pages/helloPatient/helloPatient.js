@@ -20,12 +20,34 @@ Template.helloPatient.helpers({
 })
 
 Template.helloPatient.events({
- 'click .nav-pills li': function( event, template ) {
-    var currentPill = $( event.target ).closest( "li" )
+	'click .nav-pills li': function( event, template ) {
+		var currentPill = $( event.target ).closest( "li" )
 
-    currentPill.addClass( "active" )
-    $( ".nav-pills li" ).not( currentPill ).removeClass( "active" )
+		currentPill.addClass( "active" )
+		$( ".nav-pills li" ).not( currentPill ).removeClass( "active" )
 
-    Session.set('HPstep', currentPill.data( "template" ))
-  }
+		Session.set('HPstep', currentPill.data( "template" ))
+	},
+	'click #fwd': function(event) {
+		currentStep = Session.get('HPstep')
+		switch(currentStep) {
+			case 'HPintro' : Session.set('HPstep', 'HPstep1'); break
+			case 'HPstep1' : Session.set('HPstep', 'HPstep2'); break
+			case 'HPstep2' : Session.set('HPstep', 'HPstep3'); break
+			case 'HPstep3' : Session.set('HPstep', 'HPstep4'); break
+			case 'HPstep4' : Session.set('HPstep', 'HPstep5'); break
+			case 'HPstep5' : Session.set('HPstep', 'HPfinishedCode'); break
+		}
+	},
+	'click #bck': function(event) {
+		currentStep = Session.get('HPstep')
+		switch(currentStep) {
+			case 'HPstep1' : Session.set('HPstep', 'HPintro'); break
+			case 'HPstep2' : Session.set('HPstep', 'HPstep1'); break
+			case 'HPstep3' : Session.set('HPstep', 'HPstep2'); break
+			case 'HPstep4' : Session.set('HPstep', 'HPstep3'); break
+			case 'HPstep5' : Session.set('HPstep', 'HPstep4'); break
+			case 'HPfinishedCode' : Session.set('HPstep', 'HPstep5'); break
+		}
+	}
 })
