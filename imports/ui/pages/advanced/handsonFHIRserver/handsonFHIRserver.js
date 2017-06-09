@@ -29,6 +29,7 @@ Template.handsonFHIRserver.events({
 	},
 	'click #fwd': function(event) {
 		currentStep = Session.get('FHIRserver')
+		$("li.active").removeClass("active").next().addClass("active")
 		switch(currentStep) {
 			case 'serverIntro' : Session.set('FHIRserver', 'serverStep1'); break
 			case 'serverStep1' : Session.set('FHIRserver', 'serverStep2'); break
@@ -39,6 +40,7 @@ Template.handsonFHIRserver.events({
 	},
 	'click #bck': function(event) {
 		currentStep = Session.get('FHIRserver')
+		$("li.active").removeClass("active").prev().addClass("active")
 		switch(currentStep) {
 			case 'serverStep1' : Session.set('FHIRserver', 'serverIntro'); break
 			case 'serverStep2' : Session.set('FHIRserver', 'serverStep1'); break

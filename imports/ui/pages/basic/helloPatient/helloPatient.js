@@ -30,6 +30,7 @@ Template.helloPatient.events({
 	},
 	'click #fwd': function(event) {
 		currentStep = Session.get('HPstep')
+		$("li.active").removeClass("active").next().addClass("active")
 		switch(currentStep) {
 			case 'HPintro' : Session.set('HPstep', 'HPstep1'); break
 			case 'HPstep1' : Session.set('HPstep', 'HPstep2'); break
@@ -41,6 +42,7 @@ Template.helloPatient.events({
 	},
 	'click #bck': function(event) {
 		currentStep = Session.get('HPstep')
+		$("li.active").removeClass("active").prev().addClass("active")
 		switch(currentStep) {
 			case 'HPstep1' : Session.set('HPstep', 'HPintro'); break
 			case 'HPstep2' : Session.set('HPstep', 'HPstep1'); break
