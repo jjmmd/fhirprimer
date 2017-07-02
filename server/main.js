@@ -19,10 +19,10 @@ Meteor.methods({
 	},
 	getTweets : function () {
 		Twit = new TwitMaker({
-			// consumer_key:         
-			// consumer_secret:      
-			// access_token:         
-			// access_token_secret:  
+			consumer_key:         'BUuFvZHNBGWx45o6ouZ7XS2pG',
+			consumer_secret:      '4EmRSGMng7t8pIMVjGZj2bcqU7Lt2CUxMi1J0AUAIdSprb8r6d',
+			access_token:         '2500691990-hlZCYxJDyTScOXX1jDEJPa3pXo7nOijKGD2HKc8',
+			access_token_secret:  'U0LYTk3hyBtFhaUjmnjDFrUmgoJwWPNxnB76Akpo6Fma2'
 		})
 
 		Twit.get('search/tweets', { q: '#FHIR -RT', count: 10, lang: 'en', result_type: 'recent' }, Meteor.bindEnvironment(function(err, data, response) {

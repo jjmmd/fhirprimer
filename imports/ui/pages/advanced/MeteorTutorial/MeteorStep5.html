@@ -1,0 +1,76 @@
+<template name="MeteorStep5">
+	<div>
+		<h2 class="text-center">Step 5: </h2>
+		<hr>
+	</div>
+{{#markdown}}
+
+```js
+Template.body.events({
+	'click #patientSearch' : function(event) {
+		event.preventDefault()
+
+		let name = $('#patientName').val()
+		Meteor.call('FHIRpatientSearch', name, function(err, res) {
+				Session.set('patientSearchList', res.entry)
+		})
+	},
+	'click #addPatient' : function(event) {
+		event.preventDefault()
+        Meteor.call('AddPatient',this)
+	},
+})
+```
+
+```js
+Template.body.helpers({
+	patientSearchResults : function () {
+		return Session.get('patientSearchList')
+	},
+	patientFirstName : function () {
+		return this.resource.name[0].given[0]
+	},
+	patientLastName : function () {
+		return this.resource.name[0].family[0]
+	},
+})
+```
+
+```js
+Template.body.onCreated(function () {
+	Session.set('patientSearchList', [])
+})
+```
+
+<pre>
+&#8826;hr>
+&#8826;div class="col-md-6">
+    &#8826;h2>Patient List&#8826;/h2>
+    &#8826;div class="list-group">
+        &#123;{#each patients}}
+        &#8826;button class="list-group-item chosenPatient">
+            &#123;{#each resource.name}}
+            &#123;{family}}, &#123;{given}}
+            &#123;{/each}}
+            &#8826;span class="btn badge" id="removePatient" name="&#123;{resource.id}}">Remove Patient&#8826;/span>
+        &#8826;/button>
+        &#123;{/each}}
+    &#8826;/div>
+&#8826;/div>
+</pre>
+
+{{/markdown}}
+	<hr>
+	<div class="row" style="padding:10px 0px 10px 0px">
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="bck" class="btn btn-lg btn-primary">Back</button></a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="fwd" class="btn btn-lg btn-primary">Forward</button></a>
+			</div>
+		</div>
+	</div>
+</template>

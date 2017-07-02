@@ -1,0 +1,69 @@
+<template name="MeteorStep6">
+	<div>
+		<h2 class="text-center">Step 6: </h2>
+		<hr>
+	</div>
+{{#markdown}}
+
+```
+function updateTaskList(patientId) {
+    Meteor.call('FHIRgetCarePlan', patientId, function (err, res) {
+        Session.set('patientTasks', res.entry)
+    })  
+}
+```
+
+```
+    patientTasks : function () {
+        return Session.get('patientTasks')
+    },
+    status : function(status) {
+    	return this.resource.status == status
+    }
+```
+
+```
+    'click #addTask' : function (event) {
+        event.preventDefault()
+        Meteor.call('FHIRaddCarePlan', $('#newTask').val(), Session.get('selectedPatient'))
+        updateTaskList(Session.get('selectedPatient'))
+    },
+    'click #toggleStatus' : function (event) {
+        event.preventDefault()
+        Meteor.call('FHIRtoggleCarePlanStatus', this.resource)
+        updateTaskList(Session.get('selectedPatient'))
+    },
+    'click #deleteTask' : function (event) {
+    	event.preventDefault()
+    	Meteor.call('FHIRdeleteCarePlan', this.resource)
+        updateTaskList(Session.get('selectedPatient'))
+    }
+```
+
+<pre>
+&#8826;div class="col-md-6">
+	&#8826;h2>Todo List&#8826;/h2>
+	&#8826;form class="input-group">
+		&#8826;input type="text" class="form-control" id="newTask" placeholder="Type to add new tasks" autocomplete="off" />
+		&#8826;span class="input-group-btn">
+			&#8826;button class="btn btn-default" type="submit" id="addTask">Add Task&#8826;/button>
+		&#8826;/span>
+	&#8826;/form>
+&#8826;/div>
+</pre>
+
+{{/markdown}}
+	<hr>
+	<div class="row" style="padding:10px 0px 10px 0px">
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="bck" class="btn btn-lg btn-primary">Back</button></a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="fwd" class="btn btn-lg btn-primary">Forward</button></a>
+			</div>
+		</div>
+	</div>
+</template>

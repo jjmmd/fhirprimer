@@ -1,7 +1,7 @@
 ShareIt.configure({
     sites: {                // nested object for extra configurations
         'facebook': {
-            // 'appId': 	// use sharer.php when it's null, otherwise use share dialog
+            'appId': "279960769078585"	// use sharer.php when it's null, otherwise use share dialog
         },
         'twitter': {},
         'googleplus': {}

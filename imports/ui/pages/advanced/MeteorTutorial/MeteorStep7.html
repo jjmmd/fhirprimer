@@ -1,0 +1,47 @@
+<template name="MeteorStep7">
+	<div>
+		<h2 class="text-center">Step 7: </h2>
+		<hr>
+	</div>
+{{#markdown}}
+
+```
+    patientTasks : function () {
+        return Session.get('patientTasks')
+    },
+```
+
+<pre>
+&#8826;hr>
+&#8826;ol class="list-group">
+	&#123;{#each patientTasks}}
+	&#8826;li class="list-group-item &#123;{#if status "completed"}}list-group-item-danger&#123;{else}}list-group-item-success&#123;{/if}}">
+		&#123;{#if status "completed"}}
+			&#8826;del>&#123;{this.resource.description}}&#8826;/del>
+		&#123;{else}}
+			&#123;{this.resource.description}}
+		&#123;{/if}}
+		&#8826;div class="pull-right">
+			&#8826;button class="btn btn-xs" id="toggleStatus">&#123;{this.resource.status}}&#8826;/button>
+			&#8826;button class="btn btn-xs" id="deleteTask">&times;&#8826;/button>
+		&#8826;/div>
+	&#8826;/li>
+	&#123;{/each}}
+&#8826;/ol>
+</pre>
+
+{{/markdown}}
+	<hr>
+	<div class="row" style="padding:10px 0px 10px 0px">
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="bck" class="btn btn-lg btn-primary">Back</button></a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="text-center">
+				<a href="#"><button id="fwd" class="btn btn-lg btn-primary">Forward</button></a>
+			</div>
+		</div>
+	</div>
+</template>
