@@ -13,14 +13,6 @@ function updateTaskList(patientId) {
 }
 ```
 
-```
-    patientTasks : function () {
-        return Session.get('patientTasks')
-    },
-    status : function(status) {
-    	return this.resource.status == status
-    }
-```
 
 ```
     'click #addTask' : function (event) {
@@ -28,16 +20,6 @@ function updateTaskList(patientId) {
         Meteor.call('FHIRaddCarePlan', $('#newTask').val(), Session.get('selectedPatient'))
         updateTaskList(Session.get('selectedPatient'))
     },
-    'click #toggleStatus' : function (event) {
-        event.preventDefault()
-        Meteor.call('FHIRtoggleCarePlanStatus', this.resource)
-        updateTaskList(Session.get('selectedPatient'))
-    },
-    'click #deleteTask' : function (event) {
-    	event.preventDefault()
-    	Meteor.call('FHIRdeleteCarePlan', this.resource)
-        updateTaskList(Session.get('selectedPatient'))
-    }
 ```
 
 <pre>

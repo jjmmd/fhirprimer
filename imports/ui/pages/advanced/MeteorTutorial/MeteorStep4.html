@@ -4,13 +4,57 @@
 		<hr>
 	</div>
 {{#markdown}}
+Now we need to show the patient search results in a list and allow users to select a patient or patients to follow.
 
+Returning to the client code, the second code piece we will add defines some webpage "helpers". In Meteor, helpers can be thought of as placeholders or holes in the webpage. When the browser loads the webpage, these placeholders are filled in dynamically with data depending on how we define them in our JavaScript code. Add the following code to your <code>client/main.js</code> file:
+
+<h5><b>Step 4.1 Code</b></h5>
+```
+Template.body.helpers({
+	patientSearchResults : function () {
+		return Session.get('patientSearchList')
+	},
+	patientFirstName : function () {
+		return this.resource.name[0].given[0]
+	},
+	patientLastName : function () {
+		return this.resource.name[0].family[0]
+	},
+	patientId : function () {
+		return this.resource.id
+	},
+})
+```
+
+Now that we have defined the "helpers" in the JavaScript file we can use them in our HTML file in order to display the dynamic content in the webpage. Replace the "4.2 HTML" placeholder in the <code>client/main.html</code> file with the following code:
+
+<h5><b>Step 4.2 Code</b></h5>
+```
+<br>
+<ul class="list-group">
+{{|#if patientSearchResults}}
+	{{|#each patientSearchResults}}
+		<li class="list-group-item">{{|patientFirstName}} {{|patientLastName}} 
+			<span class="btn badge" id="addPatient" name="{{patientId}}">Add Patient</span>
+		</li>
+  	{{|/each}}
+{{|/if}}
+</ul>
+```
+
+Refresh your Meteor application/browser window. Then search for a patient by the name of "Hanson". After a few seconds, the webpage with search results should look like this:
+
+<img class="center-block" src="./MeteorTutorial/patientlist.png" style="width:600px">
+
+The last thing we need to do in this step is allow a user to add this patient to the follow-up list.
+
+<h5><b>Step 4.3 Code</b></h5>
 main.js - Client
 ```js
 import { Patients } from '../import/Patients.js'
 ```
 
-Patients.js - Imports
+<h5><b>Step 4.4 Code</b></h5>
 ```js
 import { Mongo } from 'meteor/mongo'
 
@@ -27,7 +71,14 @@ if (Meteor.isServer) {
 }
 ```
 
-main.js - Server
+```
+	'click #addPatient' : function(event) {
+		event.preventDefault()
+        Meteor.call('AddPatient',this)
+	},
+```
+
+<h5><b>Step 4.5 Code</b></h5>
 ```js
 import { Patients } from '../import/Patients.js'
 ```
