@@ -32,7 +32,6 @@ This will be our blank HTML slate to build upon. I have left place holder commen
 	<!-- Step 4.2 HTML code goes HERE -->
 	<!-- Step 6.1 HTML code goes HERE -->
 	<!-- Step 7.1 HTML code goes HERE -->
-	<!-- Step 8.1 HTML code goes HERE -->
 </div>
 ```
 
@@ -87,6 +86,10 @@ Template.body.events({
 				Session.set('patientSearchList', res.entry)
 		})
 	},
+	//Insert Step 5.3 Code Here
+	//Insert Step 6.3 Code Here
+	//Insert Step 7.2 Code Here
+	//Insert Step 7.4 Code Here
 })
 ```
 
@@ -94,6 +97,7 @@ This code tells the webpage to listen for a click on the HTML element with an <c
 
 In order to make this function work, we need to add the server side code that sends the search query to the FHIR server. Let's do that now by editing the <code>main.js</code> file in the <code>patient-todo/server</code> directory. To the bottom of the <code>main.js</code> file, add the following code snippit:
 
+<h5><b>Step 3.5 JavaScript Code</b></h5>
 <pre>
 import { HTTP } from 'meteor/http'
 
@@ -104,6 +108,10 @@ Meteor.methods({
 		
 		return JSON.parse(result.content)
 	},
+	// Step 5.4 Code Goes HERE
+	// Step 6.4 Code Goes HERE
+	// Step 7.5 Code Goes HERE
+	// Step 8.3 Code Goes HERE
 })
 </pre>
 

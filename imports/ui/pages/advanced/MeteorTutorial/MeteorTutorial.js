@@ -10,6 +10,7 @@ import './MeteorStep5.html'
 import './MeteorStep6.html'
 import './MeteorStep7.html'
 import './MeteorStep8.html'
+import './MeteorStep9.html'
 
 Template.MeteorTutorial.onCreated(function () {
 	Session.set('MeteorStep', 'MeteorIntro')

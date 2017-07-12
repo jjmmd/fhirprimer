@@ -1,6 +1,6 @@
 <template name="MeteorStep4">
 	<div>
-		<h2 class="text-center">Step 4: </h2>
+		<h2 class="text-center">Step 4: Showing the Search Results</h2>
 		<hr>
 	</div>
 {{#markdown}}
@@ -23,6 +23,9 @@ Template.body.helpers({
 	patientId : function () {
 		return this.resource.id
 	},
+	//Insert Step 6.2 Code Here
+	//Insert Step 7.3 Code Here
+	//Insert Step 8.4 Code Here
 })
 ```
 
@@ -46,42 +49,9 @@ Refresh your Meteor application/browser window. Then search for a patient by the
 
 <img class="center-block" src="./MeteorTutorial/patientlist.png" style="width:600px">
 
-The last thing we need to do in this step is allow a user to add this patient to the follow-up list.
+Don't be surprised if there is a bit of a delay before you see the search results. There can often be some lag for the first request to the FHIR server, however subsequent requests will perform better. You can also try searching for a patient by the last name 'Morrison'.
 
-<h5><b>Step 4.3 Code</b></h5>
-main.js - Client
-```js
-import { Patients } from '../import/Patients.js'
-```
-
-<h5><b>Step 4.4 Code</b></h5>
-```js
-import { Mongo } from 'meteor/mongo'
-
-export const Patients = new Mongo.Collection('patients')
-
-if (Meteor.isClient) {
-    Meteor.subscribe('patients')
-}
-
-if (Meteor.isServer) {
-    Meteor.publish('patients', function PatientsPublication() {
-        return Patients.find({})
-    })
-}
-```
-
-```
-	'click #addPatient' : function(event) {
-		event.preventDefault()
-        Meteor.call('AddPatient',this)
-	},
-```
-
-<h5><b>Step 4.5 Code</b></h5>
-```js
-import { Patients } from '../import/Patients.js'
-```
+Proceed to Step 5...
 
 {{/markdown}}
 	<hr>
