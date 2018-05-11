@@ -4,7 +4,7 @@ import "./basichandson.html"
 
 Template.basichandson.onCreated(function () {
 	let defaultFHIR = {
-		base : "http://api.hackathon.siim.org/fhir/",
+		base : "http://hackathon.siim.org/fhir/",
 		resource : "AllergyIntolerance",
 		queryParams : {
 			name : ""
