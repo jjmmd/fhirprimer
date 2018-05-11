@@ -9,7 +9,7 @@ Meteor.methods({
 		let options = {
 			headers : {
 				Accept	: "application/json",
-				apikey : "HackathonOrientationSession"
+				apikey : "40d26305-4934-40a2-8165-ddc7712bea71"
 			}
 		}
 		console.log(url)
